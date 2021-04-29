@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Main Page</title>
+        <link rel="stylesheet" href="style5.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+    </head>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="https://i.pinimg.com/originals/dc/22/1a/dc221a3b63c5b5ced0357d3d939b98ab.jpg">
+            </div>
+            <ul class="nav-area">
+		<li><a href="mainpage.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="fitness.html">Fitness</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="Food.html">Cooking</a></li>
+            </ul> 
+        </div>
+        <div class="welcome-text">
+            <h1>Bring music to life</h1>
+            <a href="#">Romantic western</a>
+            <a href="#">Romantic bollywood</a>
+            <a href="#">hip-hop</a>
+            <a href="#">Disco</a>
+            <a href="#">sufi</a>
+        </div>
+    </header>
+<button class="open-button" onclick="openForm()">Add song</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Add Song</h1>
+
+    <label for="song_name"><b>Song Name</b></label>
+    <input type="text" placeholder="Enter Song Name" name="song_name" required>
+
+    <label for="author"><b>Singer</b></label>
+    <input type="text" placeholder="Enter singer Name" name="singer" required>
+    
+    <label for="genre"><b>Choose a genre:</b></label>
+
+   <select name="genre" id="books">
+  <option value="Romantic Western"><b>Romantic Western</b></option>
+  <option value="Romantic Bollywood"><b>Romantic Bollywood</b></option>
+  <option value="Hip-Hop"><b>Hip-Hop</b></option>
+  <option value="Discor"><b>Disco</b></option>
+  <option value="Sufi"><b>Sufi</b></option>
+</select>
+     <br>
+<br>
+    <label for="About"><b>About</b></label>
+    <input type="text" placeholder="Enter Description" name="about" required>
+
+    <button type="submit" class="btn">Add Song</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</html>
